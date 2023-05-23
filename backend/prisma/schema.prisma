@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model departments {
+  department_id          Int     @id @default(autoincrement())
+  department_title       String
+  department_date        String
+  department_description String
+}
+
+model workers {
+  worker_id          Int         @id @default(autoincrement())
+  worker_name        String
+  worker_surname     String 
+  worker_department  Int         @map("worker_department_id") // замените на имя скалярного поля
+  isHead             Boolean
+  worker_date        String
+}
