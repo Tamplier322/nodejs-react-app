@@ -7,5 +7,6 @@ router.get('/worker', workerController.getWorker)
 router.get('/worker/:id', workerController.getOneWorker)
 router.put('/worker', workerController.updateWorker)
 router.delete('/worker/:id', workerController.deleteWorker)
+router.get('/worker/:id/check-head', workerController.checkHead);
 
 module.exports = router
